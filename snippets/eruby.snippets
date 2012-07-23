@@ -3,14 +3,40 @@
 # Includes html.snippets
 
 # Rails *****************************
+snippet each
+	<% ${1:collection}.each do |${2:member}| -%>
+		${3}
+	<% end -%>
+snippet =
+	<%= ${1} %>
+snippet -
+	<% ${1} -%>
+snippet if
+	<% if ${1:cond} -%>
+		${2}	
+	<% end -%>
+snippet unless
+	<% unless ${1:cond} -%>
+		${2}	
+	<% end -%>
+snippet ife
+	<% if ${1:cond} -%>
+		${2}	
+	<% else -%>
+		${3}
+	<% end -%>
+snippet unlesse
+	<% unless ${1:cond} -%>
+		${2}	
+	<% else -%>
+		${3}
+	<% end -%>
 snippet rc
 	<% ${1} %>
 snippet rce
 	<%= ${1} %>${2}
 snippet %
 	<% ${1} %>
-snippet =
-	<%= ${1} %>${2}
 snippet end
 	<% end %>${1}
 snippet ead
@@ -49,10 +75,6 @@ snippet cs
 	<%= collection_select <+object+>, <+method+>, <+collection+>, <+value_method+>, <+text_method+><+, <+[options]+>, <+[html_options]+>+> %>
 snippet ct
 	<%= content_tag '${1:DIV}', ${2:content}${3:,options} %>
-snippet ff
-	<% form_for @${1:model} do |f| %>
-		${2}
-	<% end %>
 snippet ffcb
 	<%= ${1:f}.check_box :${2:attribute} %>
 snippet ffe
