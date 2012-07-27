@@ -16,7 +16,6 @@ snippet beg
 		${3}
 	rescue ${1:Exception} => ${2:e}
 	end
-
 snippet req
 	require "${1}"${2}
 snippet #
@@ -513,3 +512,5 @@ snippet stop
 	stop = Time.now.to_f
 snippet ptime
 	puts "Completed: #{${1:param} - ${2:param}}"
+snippet new
+	${1:variable} = ${2:Class}.new(${3:params})
