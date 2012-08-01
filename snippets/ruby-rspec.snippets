@@ -4,11 +4,12 @@ snippet spechelper
 
 # describe
 snippet des
-	describe ${1:description}" do
+	describe "${1:description}" do
 		${2}
 	end
 snippet desc
 	describe ${1:class} do
+
 		before do
 			${2}
 		end
@@ -16,6 +17,7 @@ snippet desc
 	end
 snippet descd
 	describe ${1:class}, "${2:description}" do
+
 		before do
 			${3}
 		end
@@ -23,6 +25,7 @@ snippet descd
 	end
 snippet desd
 	describe "${1:description}" do
+
 		before do
 			${2}
 		end
