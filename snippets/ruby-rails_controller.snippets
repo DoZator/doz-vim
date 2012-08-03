@@ -1,8 +1,9 @@
 # Actionpack controller
 
 snippet respond_to
-	respond_to do |wants|
-		wants.${1:html}${2}
+	respond_to do |format|
+		format.html
+		format.json { render json: ${1:variables}}
 	end
 snippet wants
 	wants.${1:js|json|xml|html}${2}
