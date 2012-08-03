@@ -11,3 +11,12 @@ snippet loge
 snippet logf
 	logger.fatal { "${1:message}" }${2}
 
+# For Gemfile
+
+snippet gem
+	gem '${1:gemname}'
+snippet group
+	group :${1:groupname} do
+		gem '${2:gemname}'
+		${3:othergems}
+	end
