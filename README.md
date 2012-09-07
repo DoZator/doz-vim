@@ -19,6 +19,6 @@ Now this repo contains:
 
 6. In repo also you can find my gvimrc file.
 
-![vim-powerline](https://lh6.googleusercontent.com/RAfpfS1KC6mpfs8Lf7il1agr3VQDDp8Obdo76-t1egyEmtgMf6r5AIFr1lvFCEzpUrx0UEABgeQ)
+![vim-powerline](https://dl.dropbox.com/u/1713297/vim_powerline.png)
 
 Good luck in coding.
