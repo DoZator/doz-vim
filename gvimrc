@@ -208,29 +208,30 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 colorscheme railscasts
 
 " Подсветка парных скобок
-
 set showmatch
 
 " Автоматическое закрытие скобок
-
 :inoremap " ""<Left>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap { {}<LEFT>
 
 " Назначение клавиши для вызова NERDTree
-
 map <F2> :NERDTreeToggle<CR>
 
+" Не создавать своп файл
 set noswapfile
 
+" Размеры окна по умолчанию
 set lines=50
 set columns=90
 
 filetype plugin on
 
+" Перенос по словам, а не по буквам
 set linebreak
 set dy=lastline
 
+" Игнорировать регистр при поиске
 set ic
 
