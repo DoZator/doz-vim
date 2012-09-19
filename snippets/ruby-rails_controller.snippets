@@ -8,5 +8,11 @@ snippet respond_to
 snippet wants
 	wants.${1:js|json|xml|html}${2}
 snippet flash
-	flash[:${1:notice}] = "${2}"
+	flash[:${1:notice}] = ${2}
+snippet bf
+	before_filter ${1:method}
+snippet bfo
+	before_filter ${1:method}, :only => [${2:methods}]
+snippet bfe
+	before_filter ${1:method}, :except => [${2:methods}]
 
