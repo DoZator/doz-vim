@@ -48,13 +48,9 @@ snippet for
 		${3}
 	<% end %>
 snippet rp
-	<%= render :partial => '${1:item}' %>
-snippet rpl
-	<%= render :partial => '${1:item}', :locals => { :${2:name} => '${3:value}'$4 } %>
-snippet rps
-	<%= render :partial => '${1:item}', :status => ${2:500} %>
-snippet rpc
-	<%= render :partial => '${1:item}', :collection => ${2:items} %>
+	<%= render '${1:item}' %>
+snippet rpv
+	<%= render '${1:item}', :${2:name} => @${3:value} %>
 snippet lia
 	<%= link_to '${1:link text...}', :action => '${2:index}' %>
 snippet liai
