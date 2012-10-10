@@ -207,6 +207,9 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 " Тема
 colorscheme railscasts
 
+" Шрифт
+set guifont=Monaco:h11
+
 " Подсветка парных скобок
 set showmatch
 
@@ -223,7 +226,7 @@ map <F2> :NERDTreeToggle<CR>
 set noswapfile
 
 " Размеры окна по умолчанию
-set lines=50
+set lines=45
 set columns=90
 
 filetype plugin on
