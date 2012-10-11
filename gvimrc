@@ -208,7 +208,9 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 colorscheme railscasts
 
 " Шрифт
-set guifont=Monaco:h11
+if has("macunix")
+  set guifont=Monaco:h11
+endif
 
 " Подсветка парных скобок
 set showmatch
