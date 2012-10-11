@@ -21,10 +21,10 @@ if !exists("syntax_on")
   syntax on
 endif
 
-if !exists("colors_name")
+"if !exists("colors_name")
     " Use the macvim color scheme by default
-    colorscheme macvim
-endif
+    "colorscheme macvim
+"endif
 
 " To make tabs more readable, the label only contains the tail of the file
 " name and the buffer modified flag.
@@ -171,7 +171,7 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 " Преобразование Таба в пробелы
 set expandtab
 
-" Размер табулации по умолчанию
+" Размер табуляции по умолчанию
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
@@ -180,7 +180,7 @@ set tabstop=2
 set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P 
 set laststatus=2
 
-" Включаем "умные" отспупы ( например, автоотступ после {)
+" Включаем "умные" отступы ( например, автоотступ после {)
 set smartindent
 
 " Fix <Enter> for comment
