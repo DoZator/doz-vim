@@ -209,7 +209,7 @@ colorscheme railscasts
 
 " Шрифт
 if has("macunix")
-  set guifont=Monaco:h13
+  set guifont=Monaco:h12
 endif
 
 " Подсветка парных скобок
