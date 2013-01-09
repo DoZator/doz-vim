@@ -68,11 +68,21 @@ snippet shbe
 	${1:target}.should be_${2:result}
 
 # expecting errors
-snippet exp
+
+snippet errexp
 	expect { ${1:method} }.to raise_error
-snippet expc
+snippet errexpc
 	expect { ${1:method} }.to raise_error(${2:ErrorClass})
-snippet expm
+snippet errexpm
 	expect { ${1:method} }.to raise_error("${2:message}")
-snippet expcm
+snippet errexpcm
 	expect { ${1:method} }.to raise_error(${2:ErrorClass}, ${3:message})
+
+#Capybara
+
+snippet vis
+	visit '${1:to}'
+snippet clnk
+	click_link '${1:link}'
+snippet exppage
+	expect(page).to have_content "${1:what}"
