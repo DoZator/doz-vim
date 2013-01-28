@@ -229,8 +229,8 @@ map <F2> :NERDTreeToggle<CR>
 set noswapfile
 
 " Размеры окна по умолчанию
-set lines=45
-set columns=90
+set lines=35
+set columns=115
 
 filetype plugin on
 
@@ -240,4 +240,11 @@ set dy=lastline
 
 " Игнорировать регистр при поиске
 set ic
+
+" MRU config
+map <F3> :MRU<CR>
+let MRU_Max_Entries = 1000
+let MRU_Window_Height = 15
+let MRU_Max_Menu_Entries = 20
+let MRU_Max_Submenu_Entries = 15
 
