@@ -108,3 +108,6 @@ set dy=lastline
 " Игнорировать регистр при поиске
 set ic
 
+" Подсветка синтаксиса Jbuilder
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+

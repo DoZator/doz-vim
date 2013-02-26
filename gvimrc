@@ -248,3 +248,6 @@ let MRU_Window_Height = 15
 let MRU_Max_Menu_Entries = 20
 let MRU_Max_Submenu_Entries = 15
 
+" Подсветка синтаксиса Jbuilder
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
