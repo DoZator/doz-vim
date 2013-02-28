@@ -111,3 +111,6 @@ set ic
 " Подсветка синтаксиса Jbuilder
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
+" Подсветка синтаксиса Gemfile
+au BufNewFile,BufRead Gemfile set ft=ruby
+
