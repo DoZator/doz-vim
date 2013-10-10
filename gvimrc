@@ -251,3 +251,16 @@ let MRU_Max_Submenu_Entries = 15
 " Подсветка синтаксиса Jbuilder
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
+" Настраиваем NerdTree
+let NERDTreeWinSize = 30 " Размер окна NERDTree
+
+let NERDTreeDirArrows=1 " Показываем стрелки в директориях
+
+let NERDTreeMinimalUI=1 " Минимальный интерфейс
+
+let NERDTreeChDirMode=2
+
+let NERDTreeHijackNetrw=0
+
+let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
+
