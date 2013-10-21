@@ -210,7 +210,7 @@ colorscheme railscasts
 
 " Шрифт
 if has("macunix")
-  set guifont=Monaco:h11
+  set guifont=Menlo:h12
 endif
 
 " Подсветка парных скобок
@@ -229,8 +229,8 @@ map <F2> :NERDTreeToggle<CR>
 set noswapfile
 
 " Размеры окна по умолчанию
-set lines=35
-set columns=115
+set lines=45
+set columns=135
 
 filetype plugin on
 
@@ -263,4 +263,7 @@ let NERDTreeChDirMode=2
 let NERDTreeHijackNetrw=0
 
 let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
+
+" Цвет директорий панели NERDTree
+:hi Directory guifg=#bfc7c7 ctermfg=gray
 

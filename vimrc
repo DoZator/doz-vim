@@ -127,3 +127,6 @@ let NERDTreeHijackNetrw=0
 
 let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
 
+" Цвет директорий панели NERDTree
+:hi Directory guifg=#bfc7c7 ctermfg=gray
+
