@@ -130,3 +130,6 @@ let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$'
 " Цвет директорий панели NERDTree
 :hi Directory guifg=#bfc7c7 ctermfg=gray
 
+" Вставляет по F5 текущее верямя (timestamp)
+nmap <F5> a<C-R>=strftime("%Y-%m-%d %I:%M:%S")<CR><Esc>
+
