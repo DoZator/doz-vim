@@ -177,6 +177,8 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 
+au FileType python setl sw=4 sts=4 et
+
 " Формат строки состояния
 set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P 
 set laststatus=2
