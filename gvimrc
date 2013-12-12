@@ -211,8 +211,12 @@ menu Encoding.utf-8 :e ++enc=utf8 <CR>
 colorscheme railscasts
 
 " Шрифт
-if has("macunix")
-  set guifont=Menlo:h12
+if has('macunix')
+  if system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop' | cut -d ' ' -f 4") > 900
+    set guifont=Menlo:h12
+  else
+    set guifont=Menlo:h14 " Font size for Macbook Air
+  endif
 endif
 
 " Подсветка парных скобок
