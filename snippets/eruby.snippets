@@ -2,6 +2,19 @@
 
 # Includes html.snippets
 
+snippet div
+	<div>
+		${1}
+	</div>
+snippet div.
+	<div class="${1}">
+		${2}
+	</div>
+snippet div#
+	<div id="${1}">
+		${2}
+	</div>
+
 # Rails *****************************
 snippet each
 	<% ${1:collection}.each do |${2:member}| -%>
