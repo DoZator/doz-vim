@@ -235,8 +235,8 @@ map <F2> :NERDTreeToggle<CR>
 set noswapfile
 
 " Размеры окна по умолчанию
-set lines=45
-set columns=135
+set lines=55
+set columns=155
 
 filetype plugin on
 
@@ -276,3 +276,5 @@ let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$'
 " Вставляет по F5 текущее верямя (timestamp)
 nmap <F5> a<C-R>=strftime("%Y-%m-%d %I:%M:%S")<CR><Esc>
 
+" Tab key to switch windows or NERDTree
+map <Tab> <C-W>W:cd %:p:h<CR>:<CR>

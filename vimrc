@@ -135,3 +135,5 @@ let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$'
 " Вставляет по F5 текущее верямя (timestamp)
 nmap <F5> a<C-R>=strftime("%Y-%m-%d %I:%M:%S")<CR><Esc>
 
+" Tab key to switch windows or NERDTree
+map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
