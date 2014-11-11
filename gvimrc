@@ -208,7 +208,7 @@ menu Encoding.cp866 :e ++enc=cp866<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 
 " Тема
-colorscheme railscasts
+colorscheme base16-ocean
 
 " Шрифт
 if has('macunix')

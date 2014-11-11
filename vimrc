@@ -84,7 +84,7 @@ vmap > >gv
 imap >Ins> <Esc>
 
 " Тема
-colorscheme railscasts
+colorscheme base16-ocean
 
 " Подсветка парных скобок
 set showmatch
