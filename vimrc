@@ -86,6 +86,8 @@ imap >Ins> <Esc>
 " Тема
 colorscheme base16-ocean
 
+set background=dark
+
 " Подсветка парных скобок
 set showmatch
 
