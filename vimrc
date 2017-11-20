@@ -22,6 +22,8 @@ set ignorecase
 " Disable highlight search results
 set nohlsearch
 
+set nowrap
+
 " Folding
 set foldmethod=manual
 set foldlevel=3
@@ -53,6 +55,9 @@ set autoindent
 set smartindent
 
 " Syntax enable
+filetype on
+filetype plugin on
+filetype plugin indent on
 syntax on
 
 " allow to use backspace instead of "x"
@@ -102,6 +107,7 @@ let NERDTreeDirArrows = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeChDirMode = 2
 let NERDTreeHijackNetrw = 0
+let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
 
 " Colors for NERDTree
@@ -109,6 +115,9 @@ let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$'
 
 " Tab key to switch windows or NERDTree
 map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
+
+" indentLine
+let g:indentLine_char = '|'
 
 "
 " vim-plug dependency manager
@@ -124,6 +133,8 @@ Plug 'chr4/nginx.vim'
 Plug 'ekalinin/Dockerfile.vim'
 
 Plug 'scrooloose/nerdtree'
+
+Plug 'Yggdroot/indentLine'
 
 Plug 'fatih/vim-go'
 
