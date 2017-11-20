@@ -1,24 +1,13 @@
 DoZator's vim plugins.
 ======================
 
-Now this repo contains: 
+Now this repo contains:
 
-1. [snipMate plugin by Michael Sanders.](https://github.com/msanders/snipmate.vim)
-  But snippets is different )
-     
-2. [NERDTree plugin.](https://github.com/scrooloose/nerdtree)
-  You can add this for NERDTree in .gvimrc file:  
+1. [NERDTree plugin](https://github.com/scrooloose/nerdtree)
+  You can add this for NERDTree in .gvimrc file:
 
     	map <F2> :NERDTreeToggle<CR>
 
-3. [NERD_commenter.](https://github.com/scrooloose/nerdcommenter) Musthave plugin for commenting.
-
-4. [Git plugin.](https://github.com/motemen/git-vim) Plugin for calling git functions from inside Vim.
-
-5. [Powerline for Vim.](https://github.com/Lokaltog/vim-powerline) Fantastic plugin for Vim statusline. 
-
-6. In repo also you can find my gvimrc file.
-
-![vim-powerline](https://dl.dropbox.com/u/1713297/vim_powerline.png)
+2. [Airline Vim](https://github.com/vim-airline/vim-airline) Lean & mean status/tabline for vim that's light as air.
 
 Good luck in coding.

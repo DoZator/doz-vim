@@ -1,141 +1,132 @@
-" Включаем несовместимость настроек с Vi (ибо Vi нам и не понадобится).
+" Necesary for lots of cool vim things (no vi)
 set nocompatible
 
-" Показывать положение курсора всё время.
-set ruler  
+" Show ruler all the time
+set ruler
 
-" Показывать незавершённые команды в статусбаре
-set showcmd  
+" Show the command that is being typed
+set showcmd
 
-" Включаем нумерацию строк
-set nu
+" Show line numbers
+set number
 
-" Фолдинг по отсупам
+" Show statusline
+set laststatus=2
+
+" Statusline format
+set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
+
+" Case-insensitive search
+set ignorecase
+
+" Disable highlight search results
+set nohlsearch
+
+" Folding
 set foldmethod=manual
 set foldlevel=3
 
-" Поиск по набору текста (очень полезная функция)
-set incsearch
-
-" Отключаем подстветку найденных вариантов, и так всё видно.
-set nohlsearch
-
-" Теперь нет необходимости передвигать курсор к краю экрана, чтобы подняться в режиме редактирования
+" Move in edit mode
 set scrolljump=7
-
-" Теперь нет необходимости передвигать курсор к краю экрана, чтобы опуститься в режиме редактирования
 set scrolloff=7
 
-" Выключаем надоедливый "звонок"
+" Disable bell
 set novisualbell
 set t_vb=
 
-" Кодировка текста по умолчанию
+" Text encoding
 set encoding=utf-8
 
-" Не выгружать буфер, когда переключаемся на другой
-" Это позволяет редактировать несколько файлов в один и тот же момент без необходимости сохранения каждый раз
-" когда переключаешься между ними
+" Switch between buffers
 set hidden
 
-" Сделать строку команд высотой в одну строку
+" Command line height
 set ch=1
 
-" Скрывать указатель мыши, когда печатаем
+" Hide mouse when typing
 set mousehide
 
-" Включить автоотступы
+" Autoindent
 set autoindent
 
-" Влючить подстветку синтаксиса
+" Smartindent
+set smartindent
+
+" Syntax enable
 syntax on
 
 " allow to use backspace instead of "x"
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 
-" Преобразование Таба в пробелы
+" Tabs to spaces
 set expandtab
 
-" Размер табуляции по умолчанию
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-
-au FileType python setl sw=4 sts=4 et
-
-" Формат строки состояния
-set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P 
-set laststatus=2
-
-" Включаем "умные" отступы ( например, автоотступ после {)
-set smartindent
+" Tabs
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Fix <Enter> for comment
 set fo+=cr
 
-" Опции сесссий
-set sessionoptions=curdir,buffers,tabpages
-
-" < & > - делаем отступы для блоков
-vmap < <gv
-vmap > >gv
-
 " Выключаем ненавистный режим замены
 imap >Ins> <Esc>
 
-" Тема
+" Theme
 colorscheme base16-ocean
 
 set background=dark
 
-" Подсветка парных скобок
+" Highlight brackets
 set showmatch
 
-" Автоматическое закрытие скобок
+" Autoclose brackets
 :inoremap " ""<Left>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap { {}<LEFT>
 
-" Назначение клавиши для вызова NERDTree
-map <F2> :NERDTreeToggle<CR>
-
-" Не создавать своп файл
+" Without swap file
 set noswapfile
 
-filetype plugin on
-
-" Перенос по словам, а не по буквам
+" Linebreak mode
 set linebreak
 set dy=lastline
 
-" Игнорировать регистр при поиске
-set ic
+" Hotkey for NERDTree
+map <F2> :NERDTreeToggle<CR>
 
-" Подсветка синтаксиса Jbuilder
-au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-
-" Подсветка синтаксиса Gemfile
-au BufNewFile,BufRead Gemfile set ft=ruby
-
-" Настраиваем NerdTree
-let NERDTreeWinSize = 30 " Размер окна NERDTree
-
-let NERDTreeDirArrows=1 " Показываем стрелки в директориях
-
-let NERDTreeMinimalUI=1 " Минимальный интерфейс
-
-let NERDTreeChDirMode=2
-
-let NERDTreeHijackNetrw=0
-
+" NerdTree setup
+let NERDTreeWinSize = 30 " Window size NERDTree
+let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeChDirMode = 2
+let NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
 
-" Цвет директорий панели NERDTree
+" Colors for NERDTree
 :hi Directory guifg=#bfc7c7 ctermfg=gray
-
-" Вставляет по F5 текущее верямя (timestamp)
-nmap <F5> a<C-R>=strftime("%Y-%m-%d %I:%M:%S")<CR><Esc>
 
 " Tab key to switch windows or NERDTree
 map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
+
+"
+" vim-plug dependency manager
+" https://github.com/junegunn/vim-plug
+"
+call plug#begin('~/.vim/plugged')
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'chr4/nginx.vim'
+
+Plug 'ekalinin/Dockerfile.vim'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'fatih/vim-go'
+
+call plug#end()
+
+
