@@ -119,6 +119,9 @@ map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
 " indentLine
 let g:indentLine_char = '|'
 
+" Airline
+let g:airline_theme='bubblegum'
+
 "
 " vim-plug dependency manager
 " https://github.com/junegunn/vim-plug
