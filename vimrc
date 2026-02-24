@@ -121,6 +121,7 @@ let g:indentLine_char = '|'
 
 " Airline
 let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
 
 "
 " vim-plug dependency manager
@@ -142,5 +143,3 @@ Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 
 call plug#end()
-
-
