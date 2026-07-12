@@ -1,145 +1,173 @@
-" Necesary for lots of cool vim things (no vi)
+" Use modern Vim behavior instead of limited vi compatibility mode.
 set nocompatible
 
-" Show ruler all the time
+" Show the current cursor position (line and column) at the bottom.
 set ruler
 
-" Show the command that is being typed
+" Show the command or key sequence being typed in the command line.
 set showcmd
 
-" Show line numbers
+" Show absolute line numbers.
 set number
 
-" Show statusline
+" Always show the status line, even when only one window is open.
 set laststatus=2
 
-" Statusline format
+" Status line format: file name, flags, buffer number, encoding, position, and file percentage.
 set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
 
-" Case-insensitive search
+" Ignore character case when searching.
 set ignorecase
 
-" Disable highlight search results
+" Do not highlight all search matches after searching.
 set nohlsearch
 
+" Do not visually wrap long lines; scroll horizontally instead.
 set nowrap
 
-" Folding
+" Use the system clipboard for copying and pasting by default.
+set clipboard=unnamedplus
+
+" Manage code folds manually only; do not create them automatically.
 set foldmethod=manual
+" Keep folds open up to nesting level three when opening a file.
 set foldlevel=3
 
-" Move in edit mode
+" Move the window by at least 7 lines at a time when scrolling.
 set scrolljump=7
+" Keep at least 7 lines of context above and below the cursor when scrolling vertically.
 set scrolloff=7
 
-" Disable bell
+" Disable the visual error bell.
 set novisualbell
+" Clear the terminal visual-bell control sequence.
 set t_vb=
 
-" Text encoding
+" Use UTF-8 as Vim's internal text encoding.
 set encoding=utf-8
 
-" Switch between buffers
+" Allow switching to another buffer without saving the modified current buffer.
 set hidden
 
-" Command line height
+" Reserve one line for Vim's command line and messages.
 set ch=1
 
-" Hide mouse when typing
+" Hide the mouse pointer while typing.
 set mousehide
 
-" Autoindent
+" Inherit a new line's indentation from the previous line.
 set autoindent
 
-" Smartindent
+" Add simple context-aware indentation for languages that use braces.
 set smartindent
 
-" Syntax enable
+" Enable file type detection, file type plugins, and file type indentation rules.
 filetype on
 filetype plugin on
 filetype plugin indent on
+" Enable syntax highlighting.
 syntax on
 
-" allow to use backspace instead of "x"
+" Allow Backspace to remove autoindent, line breaks, and characters before insert start;
+" also allow arrow keys to cross line starts, line ends, and bracket boundaries.
 set backspace=indent,eol,start whichwrap+=<,>,[,]
 
-" Tabs to spaces
+" Convert Tab presses to spaces when inserting text.
 set expandtab
 
-" Tabs
+" Use four spaces for indentation commands and autoindent.
 set shiftwidth=4
+" Insert and remove four spaces with Tab and Backspace in Insert mode.
 set softtabstop=4
+" Display one tab character as four columns.
 set tabstop=4
 
-" Fix <Enter> for comment
+" Continue a comment on the next line after pressing Enter in Insert mode.
 set fo+=cr
 
-" Выключаем ненавистный режим замены
+" Disable the Insert key in Insert mode: return to Normal mode instead of entering Replace mode.
 imap >Ins> <Esc>
 
-" Theme
+" Apply the base16-ocean color scheme (it must be available in runtimepath).
 colorscheme base16-ocean
 
+" Tell the color scheme and plugins that a dark background is in use.
 set background=dark
 
-" Highlight brackets
+" Highlight the matching bracket when the cursor is on a bracket.
 set showmatch
 
-" Autoclose brackets
+" Automatically insert matching quotes and brackets in Insert mode, leaving the cursor inside.
 :inoremap " ""<Left>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 imap { {}<LEFT>
 
-" Without swap file
+" Do not create swap files containing recovery data for open buffers.
 set noswapfile
 
-" Linebreak mode
+" Break visually wrapped lines at words rather than in the middle of a word.
 set linebreak
+" When moving down a long line, move to its last screen line.
 set dy=lastline
 
-" Hotkey for NERDTree
+" Toggle the NERDTree file tree with F2.
 map <F2> :NERDTreeToggle<CR>
 
-" NerdTree setup
-let NERDTreeWinSize = 30 " Window size NERDTree
+" NERDTree settings.
+let NERDTreeWinSize = 30 " File tree window width in columns.
+" Show arrows next to directories instead of + and ~ symbols.
 let NERDTreeDirArrows = 1
+" Hide secondary NERDTree interface elements.
 let NERDTreeMinimalUI = 1
+" Change Vim's working directory to the selected file's directory.
 let NERDTreeChDirMode = 2
+" Do not replace Vim's built-in netrw file manager with NERDTree.
 let NERDTreeHijackNetrw = 0
+" Show hidden files and directories.
 let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['\.png$','\.pyc$', '\.db$', '\.git$', '*.\.o$', '.*\.out$', '.*\.so$', '.*\.a$', '.*\~$']
 
-" Colors for NERDTree
+" Color directory names in NERDTree with the specified GUI color and terminal gray.
 :hi Directory guifg=#bfc7c7 ctermfg=gray
 
-" Tab key to switch windows or NERDTree
+" Move to the next Vim window with Tab and set the current file's directory as working directory.
 map <Tab> <C-W>W:cd %:p:h<CR>:<CR>
 
-" indentLine
+" Use a vertical bar to show indentation levels (indentLine plugin).
 let g:indentLine_char = '|'
 
-" Airline
+" Use the bubblegum theme for the vim-airline status line.
 let g:airline_theme='bubblegum'
-let g:airline_powerline_fonts = 1
+" Do not use Powerline glyphs; ordinary fonts will render the interface correctly.
+" let g:airline_powerline_fonts = 1
+" Right status-line section: current line/total lines, column, and file position.
+let g:airline_section_z = 'Ln: %l/%L  Col: %c  %3p%%'
 
 "
 " vim-plug dependency manager
 " https://github.com/junegunn/vim-plug
 "
+" Start plugin declarations; plugins are installed in ~/.vim/plugged.
 call plug#begin('~/.vim/plugged')
 
+" Status line and its theme collection.
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Syntax highlighting for nginx configuration files.
 Plug 'chr4/nginx.vim'
 
+" Syntax highlighting for Dockerfiles.
 Plug 'ekalinin/Dockerfile.vim'
 
+" File manager in a side panel.
 Plug 'scrooloose/nerdtree'
 
+" Display indentation-level guides.
 Plug 'Yggdroot/indentLine'
 
+" Go development support.
 Plug 'fatih/vim-go'
 
+" Finish plugin declarations and add the plugins to runtimepath.
 call plug#end()
