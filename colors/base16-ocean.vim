@@ -427,6 +427,27 @@ call <sid>hi("StartifySpecial",  s:gui03, "", s:cterm03, "", "", "")
 
 " Java highlighting
 call <sid>hi("javaOperator",     s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("javaExternal",     s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaScopeDecl",    s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaStorageClass", s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaClassDecl",    s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaConceptKind",  s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaExceptions",   s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaStatement",    s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaConstant",     s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("javaType",         s:gui0A, "", s:cterm0A, "", "", "")
+" Also cover java.lang types when Vim's optional Java class lists are enabled.
+for s:java_class_group in ['javaC_', 'javaI_', 'javaR_', 'javaE_', 'javaX_']
+  call <sid>hi(s:java_class_group, s:gui0A, "", s:cterm0A, "", "", "")
+endfor
+unlet s:java_class_group
+call <sid>hi("javaOceanType",        s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("javaOceanImportPath",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("javaOceanStaticCall",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("javaOceanVariable",    s:gui08, "", s:cterm08, "", "none", "")
+call <sid>hi("javaOceanField",       s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("javaOceanMethod",      s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("javaOceanPackagePath", s:gui05, "", s:cterm05, "", "", "")
 
 " Remove functions
 delf <sid>hi
