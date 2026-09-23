@@ -305,6 +305,29 @@ call <sid>hi("GitGutterChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "", "")
 call <sid>hi("GitGutterDelete",  s:gui08, s:gui01, s:cterm08, s:cterm01, "", "")
 call <sid>hi("GitGutterChangeDelete",  s:gui0E, s:gui01, s:cterm0E, s:cterm01, "", "")
 
+" Go highlighting (vim-go syntax groups).
+" RGBA inputs use FF opacity; GUI colors below contain only the RGB bytes.
+call <sid>hi("goPackage",       s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("goPackageName",   "c1c1c1", "", &t_Co >= 256 ? "250" : s:cterm05, "", "none", "")
+call <sid>hi("goQualifiedType", s:gui0A, "", s:cterm0A, "", "none", "")
+call <sid>hi("goTypeName",      s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("goReceiverType",  s:gui0A, "", s:cterm0A, "", "", "")
+call <sid>hi("goFunction",      s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("goFunctionCall",  s:gui0D, "", s:cterm0D, "", "", "")
+call <sid>hi("goParamName",     s:gui08, "", s:cterm08, "", "none", "")
+call <sid>hi("goVariable",      s:gui08, "", s:cterm08, "", "none", "")
+call <sid>hi("goReceiverVar",   s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("goReceiverUse",   s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("goField",         s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("goFieldKey",      s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("goStructField",   s:gui0D, "", s:cterm0D, "", "none", "")
+call <sid>hi("goReturn",        s:gui0E, "", s:cterm0E, "", "none", "")
+call <sid>hi("goNil",           s:gui0E, "", s:cterm0E, "", "none", "")
+call <sid>hi("goBuiltins",      s:gui0D, "", s:cterm0D, "", "none", "")
+" Custom teal for constant names; approximate it in indexed-color terminals.
+call <sid>hi("goConstant",     "52b2ac", "", &t_Co >= 256 ? "73" : s:cterm0C, "", "none", "")
+call <sid>hi("goImportedConstant", "52b2ac", "", &t_Co >= 256 ? "73" : s:cterm0C, "", "none", "")
+
 " HTML highlighting
 call <sid>hi("htmlBold",    s:gui0A, "", s:cterm0A, "", "", "")
 call <sid>hi("htmlItalic",  s:gui0E, "", s:cterm0E, "", "", "")

@@ -61,6 +61,17 @@ set autoindent
 " Add simple context-aware indentation for languages that use braces.
 set smartindent
 
+" Use exact theme RGB colors in terminals that support true color.
+if exists('+termguicolors')
+    set termguicolors
+endif
+
+" Enable vim-go highlighting before Go syntax files are loaded.
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_function_parameters = 1
+
 " Enable file type detection, file type plugins, and file type indentation rules.
 filetype on
 filetype plugin on
