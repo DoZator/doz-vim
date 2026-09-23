@@ -182,3 +182,12 @@ Plug 'fatih/vim-go'
 
 " Finish plugin declarations and add the plugins to runtimepath.
 call plug#end()
+
+" -------------------------------
+" Golang settings
+" -------------------------------
+let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
+let g:go_autodetect_gopath = 1
+let g:go_gopls_enabled = 1
