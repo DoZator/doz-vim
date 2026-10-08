@@ -166,7 +166,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Syntax highlighting for nginx configuration files.
-Plug 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim', { 'branch': 'main' }
 
 " Syntax highlighting for Dockerfiles.
 Plug 'ekalinin/Dockerfile.vim'
